@@ -5,9 +5,10 @@ import { useToken } from "../../../stores/useToken";
  * @returns 
  */
 export const AuthenticationLayout = () => {
+  // Usamos el location para obtener la ubicacion actual del usuario
   const location = useLocation();
   const { token } = useToken();
-
+  // Si el usuario esta logueado, lo redirigimos a la pagina principal
   if (token) {
     return <Navigate to="/" state={{ from: location.pathname }} replace />;
   }
