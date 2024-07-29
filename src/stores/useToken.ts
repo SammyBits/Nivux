@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { TokenStore } from "./interfaces/tokenStore";
-import { loadCookie } from "../utils/cookieManager";
+import { loadCookie } from "../utils/CookieManager";
 
 /**
  * Token store with Zustand
