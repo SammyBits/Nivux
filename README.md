@@ -1,30 +1,9 @@
-# React + TypeScript + Vite
+# Practicando usando Zustand + CRUD
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- React: React es una biblioteca de JavaScript muy popular para construir interfaces de usuario interactivas. Proporciona una forma eficiente de actualizar y renderizar componentes en función de los cambios en los datos.
 
-Currently, two official plugins are available:
+- TypeScript: TypeScript es un superconjunto de JavaScript que agrega tipado estático opcional y otras características adicionales al lenguaje. Proporciona herramientas para ayudar a detectar errores en tiempo de compilación y mejorar la calidad del código.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Zustand: Zustand es una biblioteca de gestión del estado para React. Proporciona una forma sencilla y escalable de administrar el estado de la aplicación utilizando el concepto de átomos y selectores. Con Zustand, puedes crear y compartir fácilmente el estado entre componentes sin necesidad de utilizar bibliotecas más complejas como Redux.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- API Falsa: Una API falsa es una forma de simular una API real sin necesidad de tener un servidor backend. Puedes utilizar una API falsa para probar y desarrollar tu aplicación sin depender de una API real. Puedes definir rutas y respuestas simuladas para simular el comportamiento de una API real.
