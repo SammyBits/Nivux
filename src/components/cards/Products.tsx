@@ -1,4 +1,3 @@
-import React from "react";
 import { Product } from "../../data/models/ProductModel";
 import { Title } from "../common/Title";
 import { Image } from "../common/Image";
