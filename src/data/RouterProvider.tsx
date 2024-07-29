@@ -4,7 +4,10 @@ import { AuthorizationLayout } from "../layouts/private/auth/AuthorizationLayout
 import { ProductsPage } from "../pages/private/ProductsPage";
 import { MainLayout } from "../layouts/public/MainLayout";
 import { AuthenticationLayout } from "../layouts/private/auth/AuthenticationLayout";
-
+/**
+ * RouterProvider Este componente se encarga de manejar las rutas de la aplicacion
+ * @returns RouterProvider Este componente se encarga de manejar las rutas de la aplicacion
+ */
 export const RouterProvider = () => {
   return (
     <Routes>

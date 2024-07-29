@@ -1,8 +1,8 @@
 import { API_URL } from "../const";
-import { Product } from "../models/ProductModel";
+import { NewProduct, Product } from "../models/ProductModel";
 
-export const fetchProducts = async (): Promise<Product[]> => {
-  const response = await fetch(`${API_URL}/products `);
+export const fetchProducts = async (offset?: number, limit?: number): Promise<Product[]> => {
+  const response = await fetch(`${API_URL}/products?offset=${offset}&limit=${limit}`);
   if (!response.ok) throw new Error("Failed to fetch products");
 
   const data = (await response.json()) as Product[];
@@ -15,9 +15,7 @@ export const fetchProducts = async (): Promise<Product[]> => {
 };
 
 export const fetchProduct = async (id: number): Promise<Product> => {
-  const response = await fetch(
-    `${API_URL}/products/${id}`
-  );
+  const response = await fetch(`${API_URL}/products/${id}`);
   if (!response.ok) throw new Error("Failed to fetch products");
 
   const data = (await response.json()) as Product;
@@ -27,13 +25,13 @@ export const fetchProduct = async (id: number): Promise<Product> => {
   return data;
 };
 
-export const createProduct = async (post: Product): Promise<Product> => {
+export const createProduct = async (product: NewProduct): Promise<Product> => {
   const response = await fetch(`${API_URL}/products`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(post),
+    body: JSON.stringify(product),
   });
   if (!response.ok) throw new Error("Failed to create product");
 
@@ -44,17 +42,17 @@ export const createProduct = async (post: Product): Promise<Product> => {
   return data;
 };
 
-export const updateProduct = async (id: number, post: Product): Promise<Product> => {
-  const response = await fetch(
-    `${API_URL}/products/${id}`,
-    {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(post),
-    }
-  );
+export const updateProduct = async (
+  id: number,
+  post: Product
+): Promise<Product> => {
+  const response = await fetch(`${API_URL}/products/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(post),
+  });
   if (!response.ok) throw new Error("Failed to update post");
 
   const data = (await response.json()) as Product;
@@ -63,17 +61,16 @@ export const updateProduct = async (id: number, post: Product): Promise<Product>
 
   return data;
 };
-
+/**
+ * Remove a product from the database
+ * @param id Id of the product to remove
+ * @returns   True if the product was removed successfully
+ */
 export const deleteProduct = async (id: number): Promise<boolean> => {
-  const response = await fetch(
-    `${API_URL}/product/${id}`,
-    {
-      method: "DELETE",
-    }
-  );
+  const response = await fetch(`${API_URL}/product/${id}`, {
+    method: "DELETE",
+  });
   if (!response.ok) throw new Error("Failed to delete product");
-
-  
 
   return true;
 };
