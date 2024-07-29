@@ -1,5 +1,5 @@
 import { API_URL } from "../../const";
-import { JWT } from "../../models/JwtModel";
+import { JWT } from "../../models/user/auth/JwtModel";
 
 export const createJwt = async (
   email: string,

@@ -1,7 +1,10 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { useAuth } from "../../../hooks/auth/useAuth";
-
-export const AuthLayout = () => {
+/**
+ * AuthorizationLayout Este componente sirva para que las rutas privadas solo sean accesibles si el usuario esta logueado
+ * @returns 
+ */
+export const AuthorizationLayout = () => {
   // Usamos el hook useAuth para verificar si el usuario esta logueado o no
   // Usamo estados globales con zustand para mantener el token y verificar si el token es valido
   // Esto nos ayuda a tener un componente que se encarga de verificar si el usuario esta logueado o no
@@ -25,6 +28,7 @@ export const AuthLayout = () => {
       <Navigate to="/auth/login" state={{ from: location.pathname }} replace />
     );
   }
+
   // Si el usuario esta logueado, mostramos las rutas privadas
   return <Outlet />;
 };

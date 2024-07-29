@@ -1,5 +1,5 @@
 import { API_URL } from "../const";
-import { User } from "../models/UserModel";
+import { User } from "../models/user/UserModel";
 
 export const fetchUsers = async (): Promise<User[]> => {
     const response = await fetch(`${API_URL}/users`);

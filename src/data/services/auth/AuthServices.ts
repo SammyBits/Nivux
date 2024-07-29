@@ -1,8 +1,11 @@
-import { JWT } from "../../models/JwtModel";
+import { JWT } from "../../models/user/auth/JwtModel";
+import { UserLoginModel } from "../../models/user/auth/UserLoginModel";
 import { fetchUsers } from "../UserServices";
 import { createJwt } from "./JwtServices";
 
-export const login = async (email: string, password: string): Promise<JWT> => {
+export const login = async (user: UserLoginModel): Promise<JWT> => {
+    const {email, password} = user;
+    
     if(!email)
         throw new Error('Email is required');
 
@@ -14,7 +17,7 @@ export const login = async (email: string, password: string): Promise<JWT> => {
     if (!users)
         throw new Error('Failed to fetch users');
     
-    const match = users.find(user => user.email === email && user.password === password);
+    const match = users.find(user => user.email === user.email && user.password === password);
     if (!match) 
         throw new Error('Invalid credentials');
 

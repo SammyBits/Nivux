@@ -1,4 +1,4 @@
-import { JWT } from "../../data/models/JwtModel";
+import { JWT } from "../../data/models/user/auth/JwtModel";
 
 export interface TokenStore {
     token: JWT | string | null;

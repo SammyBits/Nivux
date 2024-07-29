@@ -43,8 +43,10 @@ export const useAuth = () => {
    * Tambien se usa para verificar si el usuario esta logueado o no cuando el token cambia
    */
   useEffect(() => {
+    console.log('Running useEffect with checkAuth');
     checkAuth();
   }, [checkAuth]);
+  
 
   return { loading, isLogged };
 };
