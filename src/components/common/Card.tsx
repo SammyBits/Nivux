@@ -1,6 +1,7 @@
 
 interface props {
     children: React.ReactNode;
+    className?: string; 
 }
 export const Card = ({children} : props) => {
   return (

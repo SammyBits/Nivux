@@ -1,8 +1,12 @@
+import { useState } from "react";
+import { Button } from "../../components/common/Button";
 import { Card } from "../../components/common/Card";
 import { Container } from "../../components/common/Container";
 import { Navbar } from "../../components/navbars/Navbar";
+import { ShowComponent } from "../../components/utils/ShowComponent";
 
 export const ChildrenPage = () => {
+  const [show, setShow] = useState(false);
   return (
     <div className="min-h-screen">
       {/* Aquí se puede agregar cualquier contenido que se desee */}
@@ -45,6 +49,18 @@ export const ChildrenPage = () => {
           <p>Este es el contenido de la card 6</p>
         </Card>
       </Container>
+      <Container columns={2} gap={2}>
+        <Card>
+          <h1>Card 1</h1>
+          <p>Este es el contenido de la card 1</p>
+          <Button title="Click me" onClick={() => setShow(!show)} />
+        </Card>
+      </Container>
+        {/* Otro ejemplo de uso de un componente que recibe children */}
+      <ShowComponent shouldShow={show}>
+        <h1 className="text-bold text-white">Este es el contenido que se muestra si show es true</h1>
+      </ShowComponent>
+
     </div>
   );
 };
