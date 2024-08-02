@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Products } from "../../components/cards/Products";
-import { Pagination } from "../../components/common/Pagination";
-import { Navbar } from "../../components/navbars/Navbar";
-import { useProducts } from "../../hooks/useProducts";
-import { NewProduct } from "../../data/models/ProductModel";
-import { Modal } from "../../components/modals/products/createProduct";
+import { Products } from "../../../../components/cards/Products";
+import { Pagination } from "../../../../components/common/Pagination";
+import { Navbar } from "../../../../components/navbars/Navbar";
+import { useProducts } from "../../../../hooks/useProducts";
+import { NewProduct } from "../../../../data/models/ProductModel";
+import { Modal } from "../../../../components/modals/products/createProduct";
 
 export const ProductsPage = () => {
   const { products, createNewProduct, loading, error, setOffset } =

@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { Button } from "../../components/common/Button";
-import { Card } from "../../components/common/Card";
-import { Container } from "../../components/common/Container";
-import { Navbar } from "../../components/navbars/Navbar";
-import { ShowComponent } from "../../components/utils/ShowComponent";
+import { Button } from "../../../../components/common/Button";
+import { Card } from "../../../../components/common/Card";
+import { Container } from "../../../../components/common/Container";
+import { Navbar } from "../../../../components/navbars/Navbar";
+import { ShowComponent } from "../../../../components/utils/ShowComponent";
 
 export const ChildrenPage = () => {
   const [show, setShow] = useState(false);
   return (
-    <div className="min-h-screen">
+    <>
       {/* Aquí se puede agregar cualquier contenido que se desee */}
       {/* Si te fijas, el componente Navbar esta
       envolviendo a varios elementos. Puedes usar esta logica para que
@@ -61,6 +61,6 @@ export const ChildrenPage = () => {
         <h1 className="text-bold text-white">Este es el contenido que se muestra si show es true</h1>
       </ShowComponent>
 
-    </div>
+    </>
   );
 };

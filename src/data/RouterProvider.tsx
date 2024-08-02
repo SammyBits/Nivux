@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import { Login } from "../pages/public/auth/Login";
+import { Login } from "../layouts/public/pages/public/auth/Login";
 import { AuthorizationLayout } from "../layouts/private/auth/AuthorizationLayout";
 // import { ProductsPage } from "../pages/private/ProductsPage";
 import { MainLayout } from "../layouts/public/MainLayout";
 import { AuthenticationLayout } from "../layouts/private/auth/AuthenticationLayout";
-import { ChildrenPage } from "../pages/private/ChildrenPage";
+import { ChildrenPage } from "../layouts/public/pages/private/ChildrenPage";
 /**
  * RouterProvider Este componente se encarga de manejar las rutas de la aplicacion
  * @returns RouterProvider Este componente se encarga de manejar las rutas de la aplicacion

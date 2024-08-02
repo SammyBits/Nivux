@@ -1,5 +1,5 @@
-import { Title } from "../../../components/common/Title";
-import { FormLogin } from "../../../components/forms/FormLogin";
+import { Title } from "../../../../../components/common/Title";
+import { FormLogin } from "../../../../../components/forms/FormLogin";
 
 export const Login = () => {
   return (
