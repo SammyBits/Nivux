@@ -12,12 +12,14 @@ interface ProductFormProps {
   onClose: () => void;
 }
 
-export const ProductForm = ({
+const ProductForm: React.FC<ProductFormProps> = React.memo(({
   product,
   onChange,
   onSubmit,
   onClose,
 }: ProductFormProps) => {
+  console.log('ProductForm render', { product });
+
   return (
     <form onSubmit={onSubmit}>
       <div className="mb-4">
@@ -101,4 +103,6 @@ export const ProductForm = ({
       </div>
     </form>
   );
-};
+});
+
+export default ProductForm;

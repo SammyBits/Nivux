@@ -1,9 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import { Login } from "../pages/public/auth/Login";
 import { AuthorizationLayout } from "../layouts/private/auth/AuthorizationLayout";
-import { ProductsPage } from "../pages/private/ProductsPage";
+// import { ProductsPage } from "../pages/private/ProductsPage";
 import { MainLayout } from "../layouts/public/MainLayout";
 import { AuthenticationLayout } from "../layouts/private/auth/AuthenticationLayout";
+import { ChildrenPage } from "../pages/private/ChildrenPage";
 /**
  * RouterProvider Este componente se encarga de manejar las rutas de la aplicacion
  * @returns RouterProvider Este componente se encarga de manejar las rutas de la aplicacion
@@ -25,8 +26,8 @@ export const RouterProvider = () => {
         {/* Usamos el layout MainLayout para que las rutas privadas tengan el mismo estilo*/}
         <Route element={<MainLayout />}>
           {/* Aqui van las rutas privadas */}
-          <Route path="/" element={<div>Private</div>} />
-          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/" element={<ChildrenPage/>} />
+          {/* <Route path="/products" element={<ProductsPage />} /> */}
         </Route>
       </Route>
         <Route path="*" element={<div className="text-black">404</div>} />
