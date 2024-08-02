@@ -1,15 +1,19 @@
 import { useState } from "react";
-import { Products } from "../../../../components/cards/Products";
-import { Pagination } from "../../../../components/common/Pagination";
-import { Navbar } from "../../../../components/navbars/Navbar";
-import { useProducts } from "../../../../hooks/useProducts";
-import { NewProduct } from "../../../../data/models/ProductModel";
-import { Modal } from "../../../../components/modals/products/createProduct";
+import { Products } from "../../components/cards/Products";
+import { Pagination } from "../../components/common/Pagination";
+import { Navbar } from "../../components/navbars/Navbar";
+import { useProducts } from "../../hooks/useProducts";
+import { NewProduct } from "../../data/models/ProductModel";
+import { Modal } from "../../components/modals/products/createProduct";
+import { Button } from "../../components/common/Button";
+import { useNavigate } from "react-router-dom";
 
 export const ProductsPage = () => {
   const { products, createNewProduct, loading, error, setOffset } =
     useProducts();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
+
 
   if (loading) {
     return <div>Loading...</div>;
@@ -36,12 +40,8 @@ export const ProductsPage = () => {
   return (
     <div className="p-5 min-h-screen bg-[#111827]">
       <Navbar>
-        <button
-          onClick={() => setIsModalOpen(true)}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
-        >
-          Add Product
-        </button>
+        <Button title="Home" onClick={() => navigate("/")} />
+        <Button title="Add Product" onClick={() => setIsModalOpen(true)} />
       </Navbar>
       <div className="grid grid-cols-7 gap-6 mt-6">
         <Products products={products} />
