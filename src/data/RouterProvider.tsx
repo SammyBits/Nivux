@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { Login } from "../pages/public/auth/Login";
 import { AuthorizationLayout } from "../layouts/private/auth/AuthorizationLayout";
-// import { ProductsPage } from "../pages/private/ProductsPage";
+import { ProductsPage } from "../pages/private/ProductsPage";
 import { MainLayout } from "../layouts/public/MainLayout";
 import { AuthenticationLayout } from "../layouts/private/auth/AuthenticationLayout";
 import { ChildrenPage } from "../pages/private/ChildrenPage";
@@ -27,7 +27,7 @@ export const RouterProvider = () => {
         <Route element={<MainLayout />}>
           {/* Aqui van las rutas privadas */}
           <Route path="/" element={<ChildrenPage/>} />
-          {/* <Route path="/products" element={<ProductsPage />} /> */}
+          <Route path="/products" element={<ProductsPage />} />
         </Route>
       </Route>
         <Route path="*" element={<div className="text-black">404</div>} />

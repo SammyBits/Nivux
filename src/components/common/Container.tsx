@@ -12,9 +12,10 @@ interface props {
  */
 export const Container = ({ children, columns, gap }: props) => {
   const hadGap: number = gap ? gap : 4;
+  const hadColumns: number = columns ? columns : 2;
   return (
     // Estoy haciendo un componente donde se pueda definir el numero de columnas y el gap entre los elementos hijos
-    <div className={`grid grid-cols-${columns} gap-${hadGap} p-5`}>
+    <div className={`grid grid-cols-${hadColumns} gap-${hadGap} p-5`}>
       {/* Esto me va ayudar a que todo lo que tenga dentro de este componente se muestre en forma de grid */}
       {children}
     </div>
